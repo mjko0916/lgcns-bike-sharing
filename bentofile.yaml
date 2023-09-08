@@ -1,0 +1,9 @@
+service: "service.py:svc"
+include:
+  - "service.py"
+python:
+  requirements_txt: “./requirements.txt"
+
+# requirements.txt
+bentoml>=1.0.0
+scikit-learn
