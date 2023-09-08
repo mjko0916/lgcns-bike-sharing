@@ -37,7 +37,7 @@ if __name__ == "__main__":
     train_df = pd.read_csv(os.path.join(DATA_PATH, "bike_sharing_train.csv"))
 
     _X = train_df.drop(["datetime", "count"], axis=1)
-    y = np(train_df["count"])
+    y = train_df["count"]
     
     # TODO: X=_X, y=y로 전처리 파이프라인을 적용해 X에 저장
     X = preprocess_pipeline.fit_transform(X=_X, y=y)
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     # Set experiment name for mlflow
     logger.info(f"Set experiment name for mlflow")
 
-    experiment_name = "new_experiment_with_log_nemo"
+    experiment_name = "new_experiment_bike_sharing"
     mlflow.set_experiment(experiment_name=experiment_name)
     mlflow.set_tracking_uri("./mlruns")
 
